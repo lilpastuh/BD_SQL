@@ -136,5 +136,11 @@ felon_article (MTM)
     FOREIGN KEY article_id REFERENCES criminal_article(id) NOT NULL,
     date_of_article DATE NOT NULL,
     note TEXT
+
+
+# Диаграмма 
+
+![image](https://github.com/lilpastuh/BD_SQL/assets/94675136/dd2ee0dd-977d-4fdb-ad66-49ee83b098d8)
+
  
 
