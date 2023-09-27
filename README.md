@@ -142,5 +142,6 @@ felon_article (MTM)
 
 ![image](https://github.com/lilpastuh/BD_SQL/assets/94675136/dd2ee0dd-977d-4fdb-ad66-49ee83b098d8)
 
- 
+ ![image](https://github.com/lilpastuh/BD_SQL/assets/94675136/8b1a7192-a042-49ea-878c-9cbb1b7915dc)
+
 
