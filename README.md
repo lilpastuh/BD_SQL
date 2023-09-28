@@ -88,6 +88,11 @@ policeman_rank
 
     id SERIAL PRIMARY KEY NOT NULL,
     rank_name VARCHAR(25) UNIQUE NOT NULL
+police_speciallization
+
+    id SERIAL PRIMARY KEY NOT NULL,
+    specialization_name VARCHAR(25) UNIQUE NOT NULL,
+    FOREIGN KEY rank_id REFERENCES doctor_category(id) NOT NULL
 
 reception_time_slot
 
