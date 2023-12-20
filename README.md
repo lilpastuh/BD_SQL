@@ -3,46 +3,40 @@
 # Грищук Александр Олегович 153505
 # Тема - Полицейский участок
 
-# Functional requirements:
+# Функциональные требования:
 
-    •	User authorization
-    •	User management (CRUD)
-    •	The role system (roles: FELON, POLICEMAN, ADMIN)
-    •	Logging user actions
-    •	Police rank&specializations CRUD (ADMIN)
-    •	Schedule CRUD (ADMIN)
-    •	Services CRUD (ADMIN)
-    •	Appointments CRUD (FELON, POLICEMAN)
-    •	Criminal article CRUD (POLICEMAN)
-    •	Prescriptions CRUD (POLICEMAN)
+    • Авторизация пользователя
+    • Управление пользователями (регистрация, удаление аккаунта, просмотр)
+    • Ролевая система (роли: Преступник, ПОЛИЦЕЙСКИЙ, АДМИН)
+    • Регистрация действий пользователя(логирование).
+    • просмотр информации о запросах(полицейский, админ)
+    • Полицейские CRUD (Админ)
+    • Адвокаты CRUD (ПОЛИЦЕЙСКИЙ)
 
-# Use-case
+# Вариант использования
 
-1. Non-authorized user
+1. Неавторизованный пользователь
    
-    See policemen list
-    See policemen's services list
-    See reception time
-    Authorize
+    Посмотреть список адвокатов
+    Авторизовать
    
-2. Authorized user
+2. Авторизованный пользователь
    
-  2.1. Felon
+  2.1. Преступник
   
-      See policemen list
-      See policemen's services list
-      See reception time
-      Make an appointment
+     Подать запрос на услуги адвоката
+     Просмотр истории своих запросов
       
-  2.2. Policemen
+
+  2.2. Полицейские
   
-      See their appointments
-      Felon criminal articles CRUD
-      Prescriptions CRUD
-      
-  2.3. Admin
+       Просмотр истории запросов для обвиняемого
+  2.3 Адвокат
+просмотр лога пользователей
+  2.4. Админ
   
-CRUD with all entities
+CRUD Полицейских и Адвокатов
+и все, что полицейский и адвокат
 
 # Таблицы
 
