@@ -142,8 +142,7 @@ felon_article (MTM)
 
 # Диаграмма 
 
-![image](https://github.com/lilpastuh/BD_SQL/assets/94675136/dd2ee0dd-977d-4fdb-ad66-49ee83b098d8)
+![image_2023-12-27_16-29-38](https://github.com/lilpastuh/BD_SQL/assets/94675136/e20d87bc-8e4b-471f-b948-d009863e2d5c)
 
- ![image](https://github.com/lilpastuh/BD_SQL/assets/94675136/8b1a7192-a042-49ea-878c-9cbb1b7915dc)
 
 
