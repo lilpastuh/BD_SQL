@@ -50,13 +50,6 @@ user
     password VARCHAR(50) NOT NULL,
     FOREIGN KEY role_id REFERENCES role(id) NOT NULL
     
-user_activity
-
-    id BIGSERIAL PRIMARY KEY NOT NULL,
-    FOREIGN KEY user_id REFERENCES user(id) NOT NULL,
-    activity_type VARCHAR(255) NOT NULL,
-    date_of_activity DATE NOT NULL,
-    time_of_activity TIME NOT NULL
     
 role
 
@@ -81,63 +74,44 @@ policeman
     last_name VARCHAR(50) NOT NULL,
     FOREIGN KEY specialization_id REFERENCES policeman_specialization(id) NOT NULL,
     
-policeman_rank
-
-    id SERIAL PRIMARY KEY NOT NULL,
-    rank_name VARCHAR(25) UNIQUE NOT NULL
-police_speciallization
-
-    id SERIAL PRIMARY KEY NOT NULL,
-    specialization_name VARCHAR(25) UNIQUE NOT NULL,
-    FOREIGN KEY rank_id REFERENCES doctor_category(id) NOT NULL
-
-reception_time_slot
-
-    id BIGSERIAL PRIMARY KEY NOT NULL,
-    date_reception DATE NOT NULL,
-    time_reception TIME NOT NULL,
-    FOREIGN KEY doctor_id REFERENCES policeman(id) NOT NULL,
-    is_free BOOLEAN NOT NULL DEFAULT FALSE
-    
-service
-
-    id SERIAL PRIMARY KEY NOT NULL,
-    service_name VARCHAR(50) NOT NULL,
-    price DECIMAL(12,2) NOT NULL,
-    FOREIGN KEY policeman_id REFERENCES policeman(id) NOT NULL
-    
-appointment
-
-    id BIGSERIAL PRIMARY KEY NOT NULL,
-    FOREIGN KEY time_slot_id REFERENCES reception_time_slot(id) NOT NULL,
-    FOREIGN KEY felon_id REFERENCES felon(id) NOT NULL,
-    FOREIGN KEY lawyer_id REFERENCES lawyer(id)
-    
-appointment_service (MTM)
-
-    id BIGSERIAL PRIMARY KEY NOT NULL,
-    FOREIGN KEY appointment_id REFERENCES appointment(id) NOT NULL,
-    FOREIGN KEY service_id REFERENCES service(id) NOT NULL
-    
-criminal_article
-
-    id SERIAL PRIMARY KEY NOT NULL,
-    article_name VARCHAR(50) NOT NULL,
-    article_number VARCHAR(10) NOT NULL
-    
 lawyer
 
     id BIGSERIAL PRIMARY KEY NOT NULL,
     note TEXT NOT NULL,
     FOREIGN KEY appointment_id REFERENCES appointment(id) NOT NULL
-    
-felon_article (MTM)
 
-    id BIGSERIAL PRIMARY KEY NOT NULL,
-    FOREIGN KEY felon_id REFERENCES felon(id) NOT NULL,
-    FOREIGN KEY article_id REFERENCES criminal_article(id) NOT NULL,
-    date_of_article DATE NOT NULL,
-    note TEXT
+
+logging
+
+    ID SERIAL PRIMARY KEY,
+    log_time TIMESTAMP
+    message VARCHAR(32) NOT NULL,
+    UserId INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(ID)
+
+Request
+
+    ID SERIAL PRIMARY KEY,
+    CreatedDate TIMESTAMP NOT NULL,
+    RequestStatus VARCHAR(32) NOT NULL,
+    FelonID INT NOT NULL,
+    LawyerID INT NOT NULL,
+    PolicemanID INT NOT NULL,
+    FOREIGN KEY (FelonID) REFERENCES Felon(ID),
+    FOREIGN KEY (LawyerID) REFERENCES Lawyers(ID),
+    FOREIGN KEY (PolicemanID) REFERENCES Policeman(ID)
+
+ CarTypes 
+ 
+    ID SERIAL PRIMARY KEY,
+    Type VARCHAR(64) NOT NULL
+
+Cars 
+    ID SERIAL PRIMARY KEY,
+    Model VARCHAR(64) NOT NULL,
+    Manufacture_Year DATE NOT NULL,
+    cartypesid INT NOT NULL,
+    FOREIGN KEY (cartypesid) REFERENCES CarTypes(ID)
 
 
 # Диаграмма 
